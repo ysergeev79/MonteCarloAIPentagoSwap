@@ -1,4 +1,7 @@
-The goal of the assigned project required for exploration of artificial intelligence
+  
+    A Monte-Carlo Implementation of a variation of the game Pentago
+  
+  The goal of the assigned project required for exploration of artificial intelligence
 algorithms and how they behave in direct practical application, as opposed to theory.
 The game on which this exploration would be carried out was Pentago-Swap, a different
 variation on the game Pentago, which in itself lies in the category of Moku games.
@@ -8,7 +11,7 @@ current game state. Albeit, the large state space, and the ability to swap two q
 at every move, significantly raises the complexity as well as the run-time of state
 determination.
 
-The solution to the task at hand was approached by research and
+  The solution to the task at hand was approached by research and
 experimentation in order to output the best result as well as have a basis of comparison
 from which a concrete solution would be deemed better than another. Due to the
 general popularity of such a family of boardgames, many resources and research
@@ -19,7 +22,7 @@ can infer the depth of the potential game-tree to be d = 36. To further estimate
 structure of the tree, we may note the branching factor to signify the number of possible
 moves per every game state [1].
 
-Undoubtedly, any such game may be solvable, given an infinite amount of time
+  Undoubtedly, any such game may be solvable, given an infinite amount of time
 and the opportunity to walk through the whole structure of the game tree. However due
 to general time constraints, and additional time constraints put on the tournament,
 algorithms had to be applied to reduce the problem and solution size. Under this
@@ -33,7 +36,7 @@ basis of comparison. Ideally, winning positions will be provided with a high rat
 positions that lead to loss will be rated lower, with draws extrapolated by the heuristic at
 hand [1].
 
-Depending on the turn of the player, the values of the states will be set to
+  Depending on the turn of the player, the values of the states will be set to
 maximizing or minimizing (with maximization performed by first player, and minimization
 performed by the second).The results are back propagated to the root, with the
 implementation of the most optimal heuristic function being key, as the result of the
@@ -41,7 +44,7 @@ algorithm could be perfect if it were to return the correct theoretical game val
 Alpha-beta additionally saves time by avoiding visiting needless nodes that do not affect
 the result.
 
-This Alpha beta approach was considered. The minimax algorithm in its bare
+  This Alpha beta approach was considered. The minimax algorithm in its bare
 structure was implemented, but figuring out a solid heuristic was where the difficulty
 essentially lied. What seemed most simple and straightforward was to evaluate the
 boards based on how many marbles where in-line, therefore positions with more in-line
@@ -62,7 +65,8 @@ Go playing programs [2]. Moreover, the advantages of Monte-Carlo Tree Search are
 lack of requirements for game-specific knowledge or a heuristic that would evaluate
 every board state. In addition, the run may be stopped at a configured time so that the
 playout conform to the time constraint.
-The Monte Carlo Tree Search works on the basis of random game simulations of
+
+  The Monte Carlo Tree Search works on the basis of random game simulations of
 each possible position made from the current parent board state. The algorithm
 implemented kept statistics of all nodes run, and then applied the Upper Confidence
 Bound to them, in order to identify a confidence interval for wins played out by each
@@ -87,7 +91,8 @@ the loser, with a 0 for a draw. The simulations played were performed by two ran
 players performing random moves. The structure of the code was very simple with
 classes for the MCTS algorithm, the node data structure, score data structure, and a
 simulated rollout algorithm.
-The MCTS algorithm proved to be very effective, with a time set for 1000
+
+  The MCTS algorithm proved to be very effective, with a time set for 1000
 milliseconds to carry out all four steps of the MCTS. Another advantage was that it
 would not timeout, as opposed to the Alpha Beta. This randomized approach ended up
 beating most Alpha Beta agents, even with the most intricate heuristics. The power of
@@ -108,7 +113,8 @@ Therefore after half the plays performed by MCTS, we could take advantage of a g
 heuristic and a depth greater than 2 to quickly find a win. The question was when would
 we do the algorithm switch? At what tree depth would this be most optimal and useful?
 This may be further explored as a future improvement.
-Finally, the first-player guaranteed win approach was used to optimize the plays
+  
+    Finally, the first-player guaranteed win approach was used to optimize the plays
 of the agent when it plays first. Undoubtedly, the agent could be guaranteed a win in
 five moves if it always brings the board back to its desired configuration. In the
 implementation, the agent always puts the first marble in the center tile of the top-right
@@ -127,12 +133,15 @@ second player who’s goal would be to block the winning build lines of the firs
 After all, this first-player win approach almost guarantees the win of the first player, as
 long as it is not blocked, and as long as it is optimally implemented and all test cases
 are considered.
+
 [1] Ke.tu-darmstadt.de. (2019). [online] Available at:
 https://www.ke.tu-darmstadt.de/lehre/arbeiten/bachelor/2011/Buescher_Niklas.pdf [Accessed 20
 Mar. 2019].
+
 [2] Bradberry, J. (2019). Introduction to Monte Carlo Tree Search - Jeff Bradberry. [online]
 Jeffbradberry.com. Available at:
 https://jeffbradberry.com/posts/2015/09/intro-to-monte-carlo-tree-search/ [Accessed 20 Mar.
 2019].
+
 [3] Medium. (2019). Tic Tac Toe at the Monte Carlo. [online] Available at:
 https://medium.com/swlh/tic-tac-toe-at-the-monte-carlo-a5e0394c7bc2 [Accessed 20 Mar. 2019].
