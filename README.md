@@ -1,5 +1,5 @@
   
-    A Monte-Carlo Implementation of a variation of the game Pentago
+  *A Monte-Carlo Implementation of a variation of the game Pentago*
   
   The goal of the assigned project required for exploration of artificial intelligence
 algorithms and how they behave in direct practical application, as opposed to theory.
@@ -114,7 +114,7 @@ heuristic and a depth greater than 2 to quickly find a win. The question was whe
 we do the algorithm switch? At what tree depth would this be most optimal and useful?
 This may be further explored as a future improvement.
   
-    Finally, the first-player guaranteed win approach was used to optimize the plays
+   Finally, the first-player guaranteed win approach was used to optimize the plays
 of the agent when it plays first. Undoubtedly, the agent could be guaranteed a win in
 five moves if it always brings the board back to its desired configuration. In the
 implementation, the agent always puts the first marble in the center tile of the top-right
